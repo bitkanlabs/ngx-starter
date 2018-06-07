@@ -1,3 +1,3 @@
 # ngx-starter
 
-ng new ngx-starter --routing -p=bk --style=pcss --view-encapsulation=native
+ng new --routing -p=bs --style=scss --view-encapsulation=Native name
