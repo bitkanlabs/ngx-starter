@@ -1,37 +1,78 @@
 # K Site Starter
 
-```
-ng new <workspace>
-cd <workspace>
-
-yarn install @nguniversal/common @nguniversal/express-engine @nguniversal/module-map-ngfactory-loader
-yarn install -D @types/express express 
-yarn install -D jasmine webpack webpack-cli serve
-
-# fix rxjs until rxjs update
-yarn install @types/node@~10.1.4
-
-new g application --routing --style=scss --prefix=<prefix 1> <project 1>
-ng g universal --client-project=<project 1> --appId=<appId 1>
-ng g app-shell --client-project=<project 1> --universal-project
-ng add @angular/pwa --project=<project 1>
-ng add @angular/material --project=<project 1>
-
-new g application --routing --style=scss --prefix=<prefix 2> <project 2>
-ng g universal --client-project=<project 1> --appId=<appId 2>
-ng g app-shell --client-project=<project 1> --universal-project
-ng add @angular/pwa --project=<project 1>
-ng add @angular/material --project=<project 1>
-```
-
 - [x] PWA
 - [x] [Universal Rendering](https://github.com/angular/angular-cli/wiki/stories-universal-rendering)
-- [ ] i18n
+- [x] i18n
 - [ ] [HMR](https://github.com/angular/angular-cli/wiki/stories-configure-hmr)
 - [ ] [Proxy](https://github.com/angular/angular-cli/wiki/stories-proxy)
 - [ ] Material(https://github.com/angular/material2)
 - [ ] [NGXS](https://github.com/ngxs/store)
 - [ ] [Budgets](https://github.com/angular/angular-cli/wiki/stories-budgets)
+- [ ] [Hard Source plugins](https://github.com/mzgoddard/hard-source-webpack-plugin) for lightning-fast development builds.
+
+## 1. Create Workspace
+
+```
+ng new <workspace>
+cd <workspace>
+
+echo fix yarn warning
+yarn install -D jasmine
+
+echo fix rxjs until rxjs update
+yarn install @types/node@~10.1.4
+
+rm -rf e2e
+rm -rf src
+
+echo Please remove projects in angular.json
+
+```
+
+## 2. Create Application(s)
+
+```
+new g application --routing --style=scss --prefix=<prefix 1> <project 1>
+
+```
+
+## PWA
+
+```
+ng add @angular/pwa --project=<project>
+```
+
+## Universal Rendering
+
+```
+ng g universal --client-project=<project 1> --appId=<appId 1>
+yarn install @nguniversal/common @nguniversal/express-engine @nguniversal/module-map-ngfactory-loader
+yarn install -D @types/express express 
+yarn install -D webpack webpack-cli serve
+
+echo copy files from [Universal Starter](https://github.com/angular/universal-starter)
+cp prerender.ts server.ts static.paths.ts webpack.server.config.js <workspace>/projects/<project>
+echo fix relative path in these files  
+```
+
+## i18n
+```
+yarn add @ngx-translate/core @ngx-translate/http-loader
+yarn add -D @biesbjerg/ngx-translate-extract
+```
+This [tutorial](https://www.codeandweb.com/babeledit/tutorials/how-to-translate-your-angular-app-with-ngx-translate) explains how to use [ngx-translate](http://www.ngx-translate.com/), ngx-translate-extract and [BabelEdit](https://www.codeandweb.com/babeledit) to translate your Angular app.
+
+## App Shell
+
+```
+ng g app-shell --client-project=<project> --universal-project
+```
+
+## Material
+
+```
+ng add @angular/material --project=<project>
+```
 
 # Usage
 

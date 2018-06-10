@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { I18nService } from './i18n.service';
 
 @Component({
   selector: 'ksm-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'ksm';
+
+  constructor(private i18n: I18nService) {}
 }
