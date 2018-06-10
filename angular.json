@@ -50,6 +50,14 @@
               "vendorChunk": false,
               "buildOptimizer": true,
               "serviceWorker": true
+            },
+            "hmr": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/web/src/environments/environment.ts",
+                  "with": "projects/web/src/environments/environment.hmr.ts"
+                }
+              ]
             }
           }
         },
@@ -61,6 +69,11 @@
           "configurations": {
             "production": {
               "browserTarget": "web:build:production"
+            },
+            "hmr": {
+              "hmr": true,
+              "hmrWarning": false,
+              "browserTarget": "web:build:hmr"
             }
           }
         },
