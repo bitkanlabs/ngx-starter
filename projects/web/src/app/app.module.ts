@@ -4,6 +4,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+import { NgxsModule } from '@ngxs/store';
+import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
+// import { NgxsFormPluginModule } from '@ngxs/form-plugin';
+// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+// import { NgxsWebsocketPluginModule } from '@ngxs/websocket-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -22,12 +30,21 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ks-web' }),
+    BrowserAnimationsModule,
     FlexLayoutModule,
     HttpClientModule,
     AppRoutingModule,
+
+    NgxsModule.forRoot([]),
+    NgxsRouterPluginModule.forRoot(),
+    // NgxsFormPluginModule.forRoot(),
+    // NgxsStoragePluginModule.forRoot(),
+    // NgxsWebsocketPluginModule.forRoot(),
+    environment.production === false ? NgxsLoggerPluginModule.forRoot() : [],
+    environment.production === false ? NgxsReduxDevtoolsPluginModule.forRoot() : [],
+
     TranslateModule.forRoot({ loader: { provide: TranslateLoader, useFactory: (createTranslateLoader), deps: [HttpClient] } }),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

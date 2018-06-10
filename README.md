@@ -7,7 +7,7 @@
 - [x] [Proxy](https://github.com/angular/angular-cli/wiki/stories-proxy)
 - [x] Material(https://github.com/angular/material2)
 - [x] Flex Layout(https://github.com/angular/flex-layout)
-- [ ] [NGXS](https://github.com/ngxs/store)
+- [x] [NGXS](https://github.com/ngxs/store)
 - [ ] [Budgets](https://github.com/angular/angular-cli/wiki/stories-budgets)
 - [ ] [Hard Source plugins](https://github.com/mzgoddard/hard-source-webpack-plugin) for lightning-fast development builds.
 
