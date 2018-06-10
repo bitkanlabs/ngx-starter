@@ -8,7 +8,7 @@
 - [x] Material(https://github.com/angular/material2)
 - [x] Flex Layout(https://github.com/angular/flex-layout)
 - [x] [NGXS](https://github.com/ngxs/store)
-- [ ] [Budgets](https://github.com/angular/angular-cli/wiki/stories-budgets)
+- [x] [Budgets](https://github.com/angular/angular-cli/wiki/stories-budgets)
 - [ ] [Hard Source plugins](https://github.com/mzgoddard/hard-source-webpack-plugin) for lightning-fast development builds.
 
 ## 1. Create Workspace

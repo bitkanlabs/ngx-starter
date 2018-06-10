@@ -52,7 +52,15 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "serviceWorker": true
+              "serviceWorker": true,
+              "budgets": [
+                {
+                  "type": "anyScript",
+                  "baseline": "512kb",
+                  "maximumWarning": "128kb",
+                  "maximumError": "512kb"
+                }
+              ]
             }
           }
         },
@@ -203,7 +211,15 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
-              "serviceWorker": true
+              "serviceWorker": true,
+              "budgets": [
+                {
+                  "type": "anyScript",
+                  "baseline": "512kb",
+                  "maximumWarning": "128kb",
+                  "maximumError": "512kb"
+                }
+              ]
             }
           }
         },
