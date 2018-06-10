@@ -4,7 +4,7 @@
 - [x] [Universal Rendering](https://github.com/angular/angular-cli/wiki/stories-universal-rendering)
 - [x] i18n
 - [ ] [HMR](https://github.com/angular/angular-cli/wiki/stories-configure-hmr)
-- [ ] [Proxy](https://github.com/angular/angular-cli/wiki/stories-proxy)
+- [x] [Proxy](https://github.com/angular/angular-cli/wiki/stories-proxy)
 - [ ] Material(https://github.com/angular/material2)
 - [ ] [NGXS](https://github.com/ngxs/store)
 - [ ] [Budgets](https://github.com/angular/angular-cli/wiki/stories-budgets)
