@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -21,6 +22,7 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ks-mobile' }),
+    FlexLayoutModule,
     HttpClientModule,
     AppRoutingModule,
     TranslateModule.forRoot({ loader: { provide: TranslateLoader, useFactory: (createTranslateLoader), deps: [HttpClient] } }),
