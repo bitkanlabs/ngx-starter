@@ -150,7 +150,8 @@
             "tsConfig": "projects/mobile/tsconfig.app.json",
             "assets": [
               "projects/mobile/src/favicon.ico",
-              "projects/mobile/src/assets"
+              "projects/mobile/src/assets",
+              "projects/mobile/src/manifest.json"
             ],
             "styles": [
               "projects/mobile/src/styles.scss"
@@ -173,7 +174,8 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "serviceWorker": true
             }
           }
         },
@@ -207,7 +209,8 @@
             "scripts": [],
             "assets": [
               "projects/mobile/src/favicon.ico",
-              "projects/mobile/src/assets"
+              "projects/mobile/src/assets",
+              "projects/mobile/src/manifest.json"
             ]
           }
         },
