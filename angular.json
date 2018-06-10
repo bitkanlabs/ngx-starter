@@ -28,6 +28,9 @@
               "projects/web/src/manifest.json"
             ],
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "projects/web/src/styles.scss"
             ],
             "scripts": []
@@ -79,6 +82,9 @@
             "tsConfig": "projects/web/tsconfig.spec.json",
             "karmaConfig": "projects/web/karma.conf.js",
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "projects/web/src/styles.scss"
             ],
             "scripts": [],
@@ -173,6 +179,9 @@
               "projects/mobile/src/manifest.json"
             ],
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "projects/mobile/src/styles.scss"
             ],
             "scripts": []
@@ -224,6 +233,9 @@
             "tsConfig": "projects/mobile/tsconfig.spec.json",
             "karmaConfig": "projects/mobile/karma.conf.js",
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "projects/mobile/src/styles.scss"
             ],
             "scripts": [],

@@ -28,11 +28,13 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^6.0.4",
+    "@angular/cdk": "^6.2.0",
     "@angular/common": "^6.0.4",
     "@angular/compiler": "^6.0.4",
     "@angular/core": "^6.0.4",
     "@angular/forms": "^6.0.4",
     "@angular/http": "^6.0.4",
+    "@angular/material": "^6.2.1",
     "@angular/platform-browser": "^6.0.4",
     "@angular/platform-browser-dynamic": "^6.0.4",
     "@angular/platform-server": "^6.0.4",
