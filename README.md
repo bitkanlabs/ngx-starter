@@ -4,6 +4,13 @@
 ng new <workspace>
 cd <workspace>
 
+yarn install @nguniversal/common @nguniversal/express-engine @nguniversal/module-map-ngfactory-loader
+yarn install -D @types/express express 
+yarn install -D jasmine webpack webpack-cli serve
+
+# fix rxjs until rxjs update
+yarn install @types/node@~10.1.4
+
 new g application --routing --style=scss --prefix=<prefix 1> <project 1>
 ng g universal --client-project=<project 1> --appId=<appId 1>
 ng g app-shell --client-project=<project 1> --universal-project
@@ -17,15 +24,14 @@ ng add @angular/pwa --project=<project 1>
 ng add @angular/material --project=<project 1>
 ```
 
-- [ ] PWA
-- [ ] [Universal Rendering](https://github.com/angular/angular-cli/wiki/stories-universal-rendering)
+- [x] PWA
+- [x] [Universal Rendering](https://github.com/angular/angular-cli/wiki/stories-universal-rendering)
 - [ ] i18n
 - [ ] [HMR](https://github.com/angular/angular-cli/wiki/stories-configure-hmr)
 - [ ] [Proxy](https://github.com/angular/angular-cli/wiki/stories-proxy)
 - [ ] Material(https://github.com/angular/material2)
 - [ ] [NGXS](https://github.com/ngxs/store)
 - [ ] [Budgets](https://github.com/angular/angular-cli/wiki/stories-budgets)
-- [ ] postcss
 
 # Usage
 

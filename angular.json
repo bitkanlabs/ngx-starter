@@ -106,6 +106,16 @@
             "outputPath": "dist/web-server",
             "main": "projects/web/src/main.server.ts",
             "tsConfig": "projects/web/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/web/src/environments/environment.ts",
+                  "with": "projects/web/src/environments/environment.prod.ts"
+                }
+              ]
+            }
           }
         }
       }
@@ -240,6 +250,16 @@
             "outputPath": "dist/mobile-server",
             "main": "projects/mobile/src/main.server.ts",
             "tsConfig": "projects/mobile/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/mobile/src/environments/environment.ts",
+                  "with": "projects/mobile/src/environments/environment.prod.ts"
+                }
+              ]
+            }
           }
         }
       }
