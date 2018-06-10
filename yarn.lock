@@ -169,6 +169,14 @@
   dependencies:
     tslib "^1.9.0"
 
+"@angular/platform-server@^6.0.4":
+  version "6.0.4"
+  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-6.0.4.tgz#38de69d98ca01a4e20d6eac7d19b85d9257f06aa"
+  dependencies:
+    domino "^2.0.1"
+    tslib "^1.9.0"
+    xhr2 "^0.1.4"
+
 "@angular/pwa@^0.6.8":
   version "0.6.8"
   resolved "https://registry.yarnpkg.com/@angular/pwa/-/pwa-0.6.8.tgz#2bc0d8e64e997bdfb39bbd2301322c0d2163851a"
@@ -1857,6 +1865,10 @@ domhandler@2.1:
   resolved "https://registry.yarnpkg.com/domhandler/-/domhandler-2.1.0.tgz#d2646f5e57f6c3bab11cf6cb05d3c0acf7412594"
   dependencies:
     domelementtype "1"
+
+domino@^2.0.1:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/domino/-/domino-2.0.2.tgz#fa2da6ace8381cf64089079470ee33c53901010f"
 
 domutils@1.1:
   version "1.1.6"
@@ -6898,6 +6910,10 @@ ws@~3.3.1:
     async-limiter "~1.0.0"
     safe-buffer "~5.1.0"
     ultron "~1.1.0"
+
+xhr2@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/xhr2/-/xhr2-0.1.4.tgz#7f87658847716db5026323812f818cadab387a5f"
 
 xml2js@0.4.4:
   version "0.4.4"

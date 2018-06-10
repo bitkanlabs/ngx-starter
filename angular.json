@@ -99,6 +99,14 @@
               "**/node_modules/**"
             ]
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/web-server",
+            "main": "projects/web/src/main.server.ts",
+            "tsConfig": "projects/web/tsconfig.server.json"
+          }
         }
       }
     },
@@ -224,6 +232,14 @@
             "exclude": [
               "**/node_modules/**"
             ]
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/mobile-server",
+            "main": "projects/mobile/src/main.server.ts",
+            "tsConfig": "projects/mobile/tsconfig.server.json"
           }
         }
       }

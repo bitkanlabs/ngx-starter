@@ -1,12 +1,20 @@
 # K Site Starter
 
 ```
-ng new --routing --style=scss --prefix=<prefix> <project name>
-cd <project name>
-ng add @angular/pwa
-ng g universal --client-project=<project name> --appId=<appId>
-ng g app-shell --client-project=<project name> --universal-project
-ng add @angular/material
+ng new <workspace>
+cd <workspace>
+
+new g application --routing --style=scss --prefix=<prefix 1> <project 1>
+ng g universal --client-project=<project 1> --appId=<appId 1>
+ng g app-shell --client-project=<project 1> --universal-project
+ng add @angular/pwa --project=<project 1>
+ng add @angular/material --project=<project 1>
+
+new g application --routing --style=scss --prefix=<prefix 2> <project 2>
+ng g universal --client-project=<project 1> --appId=<appId 2>
+ng g app-shell --client-project=<project 1> --universal-project
+ng add @angular/pwa --project=<project 1>
+ng add @angular/material --project=<project 1>
 ```
 
 - [ ] PWA
