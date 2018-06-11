@@ -8,7 +8,7 @@ import { I18nService } from './i18n.service';
 })
 export class AppComponent {
 
-  title = 'ksw';
+  title = 'web';
 
   constructor(private i18n: I18nService) {}
 }
