@@ -1,15 +1,15 @@
 # K Site Starter
 
-- [x] [PWA](https://blog.angulartraining.com/progressive-web-apps-for-angular-6-and-beyond-f7e4b9a2f9fa)
-- [x] [Universal Rendering](https://github.com/angular/angular-cli/wiki/stories-universal-rendering)
-- [x] [i18n](http://www.ngx-translate.com/) **TODO: move to library**
-- [x] [HMR](https://github.com/angular/angular-cli/wiki/stories-configure-hmr)
-- [x] [Proxy](https://github.com/angular/angular-cli/wiki/stories-proxy)
-- [x] [Material](https://github.com/angular/material2)**TODO: examples**
-- [x] [Flex Layout](https://github.com/angular/flex-layout)**TODO: examples**
-- [x] [NGXS](https://github.com/ngxs/store), **TODO: examples**
-- [x] [Budgets](https://github.com/angular/angular-cli/wiki/stories-budgets)
-- [ ] boilerplate for Library share between projects
+- [x] [PWA](https://blog.angulartraining.com/progressive-web-apps-for-angular-6-and-beyond-f7e4b9a2f9fa) - 
+- [x] [Universal Rendering](https://github.com/angular/angular-cli/wiki/stories-universal-rendering) - 
+- [x] [i18n](http://www.ngx-translate.com/) - **TODO: move to library**
+- [x] [HMR](https://github.com/angular/angular-cli/wiki/stories-configure-hmr) - 
+- [x] [Proxy](https://github.com/angular/angular-cli/wiki/stories-proxy) - 
+- [x] [Material](https://github.com/angular/material2) - **TODO: examples**
+- [x] [Flex Layout](https://github.com/angular/flex-layout) - **TODO: examples**
+- [x] [NGXS](https://github.com/ngxs/store) - **TODO: examples**
+- [x] [Budgets](https://github.com/angular/angular-cli/wiki/stories-budgets) - 
+- [ ] [Library](https://github.com/angular/angular-cli/wiki/stories-create-library) - **TODO: boilerplate for Library share between projects**
 
 ## 1. Create Workspace
 
