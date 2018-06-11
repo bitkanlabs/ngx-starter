@@ -5,7 +5,7 @@
 - [x] [i18n](http://www.ngx-translate.com/) - _TODO: move to library_
 - [x] [HMR](https://github.com/angular/angular-cli/wiki/stories-configure-hmr) - 
 - [x] [Proxy](https://github.com/angular/angular-cli/wiki/stories-proxy) - 
-- [x] [Material](https://github.com/angular/material2) - _TODO: examples_
+- [x] [Material](https://material.angular.io) - _TODO: examples_
 - [x] [Flex Layout](https://github.com/angular/flex-layout) - _TODO: examples_
 - [x] [NGXS](https://github.com/ngxs/store) - _TODO: examples_
 - [x] [Budgets](https://github.com/angular/angular-cli/wiki/stories-budgets) - 
