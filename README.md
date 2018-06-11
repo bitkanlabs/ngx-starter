@@ -7,7 +7,7 @@
 - [x] [Proxy](https://github.com/angular/angular-cli/wiki/stories-proxy) - 
 - [x] [Material](https://material.angular.io) - _TODO: examples_
 - [x] [Flex Layout](https://github.com/angular/flex-layout) - _TODO: examples_
-- [x] [NGXS](https://github.com/ngxs/store) - _TODO: examples_
+- [x] [NGXS](http://ngxs.io) - _TODO: examples_
 - [x] [Budgets](https://github.com/angular/angular-cli/wiki/stories-budgets) - 
 - [ ] [Library](https://github.com/angular/angular-cli/wiki/stories-create-library) - _TODO: boilerplate for Library share between projects_
 
