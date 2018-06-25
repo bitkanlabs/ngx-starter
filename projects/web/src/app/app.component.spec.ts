@@ -1,11 +1,11 @@
-import { async, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { HttpClient } from '@angular/common/http';
+import { async, TestBed }                                     from '@angular/core/testing';
+import { RouterTestingModule }                                from '@angular/router/testing';
+import { HttpClientTestingModule, HttpTestingController }     from '@angular/common/http/testing';
+import { HttpClient }                                         from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { AppComponent } from './app.component';
-import { I18nService } from './i18n.service';
-import { createTranslateLoader } from './app.module';
+import { AppComponent }                                       from './app.component';
+import { I18nService }                                        from './i18n.service';
+import { createTranslateLoader }                              from './app.module';
 
 const TRANSLATIONS_EN = require('../assets/i18n/en.json');
 const TRANSLATIONS_ZHT = require('../assets/i18n/zh-cmn-Hant.json');

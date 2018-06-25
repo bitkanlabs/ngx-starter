@@ -33,7 +33,7 @@ echo Please remove projects in angular.json
 ## 2. Create Application(s)
 
 ```
-new g application --routing --style=scss --prefix=<prefix 1> <project 1>
+ng g application --routing --style=scss --prefix=<prefix 1> <project 1>
 
 ```
 

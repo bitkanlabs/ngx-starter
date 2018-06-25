@@ -1,5 +1,5 @@
 {
-	"app": {
-		"welcome": "欢迎来到{{title}}！"
-	}
+  "app": {
+    "welcome": "欢迎来到{{title}}！"
+  }
 }

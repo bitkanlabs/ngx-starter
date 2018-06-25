@@ -3,6 +3,18 @@
   "compilerOptions": {
     "outDir": "../../out-tsc/app",
     "module": "es2015",
+    "baseUrl": "./src",
+    "paths": {
+      "@env": [
+        "environments/environment"
+      ],
+      "@app/*": [
+        "app/*"
+      ],
+      "@shared/*": [
+        "app/shared/*"
+      ]
+    },
     "types": [
       "node"
     ]

@@ -1,11 +1,13 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { I18nService } from './i18n.service';
 
 describe('I18nService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [I18nService]
+      imports  : [TranslateModule.forRoot()],
+      providers: [I18nService],
     });
   });
 

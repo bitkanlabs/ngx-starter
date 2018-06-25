@@ -9,7 +9,7 @@ module.exports = {
     // This is our Express server for Dynamic universal
     server: path.join(__dirname, './server.ts'),
     // This is an example of Static prerendering (generative)
-    prerender: path.join(__dirname, './prerender.ts')
+    prerender: path.join(__dirname, './prerender.ts'),
   },
   target: 'node',
   resolve: { extensions: ['.ts', '.js'] },
@@ -18,31 +18,31 @@ module.exports = {
   output: {
     // Puts the output at the root of the dist folder
     path: path.join(__dirname, '../../', 'dist'),
-    filename: 'mobile-[name].js'
+    filename: 'mobile-[name].js',
   },
   module: {
     rules: [
-      { test: /\.ts$/, loader: 'ts-loader' },
+      { test: /\.ts$/, loader: 'ts-loader', options: { configFile: path.join(__dirname, './tsconfig.server.json') } },
       {
         // Mark files inside `@angular/core` as using SystemJS style dynamic imports.
         // Removing this will cause deprecation warnings to appear.
         test: /(\\|\/)@angular(\\|\/)core(\\|\/).+\.js$/,
         parser: { system: true },
       },
-    ]
+    ],
   },
   plugins: [
     new webpack.ContextReplacementPlugin(
       // fixes WARNING Critical dependency: the request of a dependency is an expression
       /(.+)?angular(\\|\/)core(.+)?/,
       path.join(__dirname, 'src'), // location of your src
-      {} // a map of your routes
+      {}, // a map of your routes
     ),
     new webpack.ContextReplacementPlugin(
       // fixes WARNING Critical dependency: the request of a dependency is an expression
       /(.+)?express(\\|\/)(.+)?/,
       path.join(__dirname, 'src'),
-      {}
-    )
-  ]
-}
+      {},
+    ),
+  ],
+};
