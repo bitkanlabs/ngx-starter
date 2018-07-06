@@ -3,8 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  name      : 'hmr',
   production: false,
-  hmr       : true,
+  preload   : true,
+  sentry    : false,
 };
 
 /*

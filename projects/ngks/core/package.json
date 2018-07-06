@@ -1,0 +1,16 @@
+{
+  "name": "@ngks/core",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "jest": {
+    "displayName": "@ngks/core",
+    "preset": "../../../jest-preset-lib.json",
+    "moduleNameMapper": {
+      "^@core/lib(/.*)": "<rootDir>/src/lib$1",
+      "^@core/env": "<rootDir>/src/environment"
+    }
+  }
+}

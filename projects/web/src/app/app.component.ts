@@ -1,5 +1,8 @@
-import { Component }   from '@angular/core';
-import { I18nService } from './i18n.service';
+import { Component } from '@angular/core';
+import { Title }     from '@angular/platform-browser';
+import { TranslateService } from '@ngx-translate/core';
+
+import { I18nService }      from '@web/app/i18n.service';
 
 @Component({
   selector   : 'web-root',
@@ -8,8 +11,10 @@ import { I18nService } from './i18n.service';
 })
 export class AppComponent {
 
-  title = 'web';
-
-  constructor(private i18n: I18nService) {
+  constructor(private title: Title, private i18n: I18nService, private translate: TranslateService) {
+    translate.get('APP.TITLE').subscribe((newTitle) => {
+      title.setTitle(newTitle);
+    });
   }
+
 }

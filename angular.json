@@ -28,9 +28,6 @@
               "projects/web/src/manifest.json"
             ],
             "styles": [
-              {
-                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
-              },
               "projects/web/src/styles.scss"
             ],
             "scripts": []
@@ -45,7 +42,7 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
+              "sourceMap": true,
               "extractCss": true,
               "namedChunks": false,
               "aot": true,
@@ -62,8 +59,20 @@
                 }
               ]
             },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/web/src/environments/environment.ts",
+                  "with": "projects/web/src/environments/environment.local.ts"
+                }
+              ]
+            },
             "hmr": {
               "fileReplacements": [
+                {
+                  "replace": "projects/web/src/main.ts",
+                  "with": "projects/web/src/main.hmr.ts"
+                },
                 {
                   "replace": "projects/web/src/environments/environment.ts",
                   "with": "projects/web/src/environments/environment.hmr.ts"
@@ -81,6 +90,10 @@
           "configurations": {
             "production": {
               "browserTarget": "web:build:production"
+            },
+            "local": {
+              "browserTarget": "web:build:local",
+              "proxyConfig": "proxy.conf.local.json"
             },
             "hmr": {
               "hmr": true,
@@ -103,9 +116,6 @@
             "tsConfig": "projects/web/tsconfig.spec.json",
             "karmaConfig": "projects/web/karma.conf.js",
             "styles": [
-              {
-                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
-              },
               "projects/web/src/styles.scss"
             ],
             "scripts": [],
@@ -200,9 +210,6 @@
               "projects/mobile/src/manifest.json"
             ],
             "styles": [
-              {
-                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
-              },
               "projects/mobile/src/styles.scss"
             ],
             "scripts": []
@@ -217,7 +224,7 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
+              "sourceMap": true,
               "extractCss": true,
               "namedChunks": false,
               "aot": true,
@@ -234,8 +241,20 @@
                 }
               ]
             },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/mobile/src/environments/environment.ts",
+                  "with": "projects/mobile/src/environments/environment.local.ts"
+                }
+              ]
+            },
             "hmr": {
               "fileReplacements": [
+                {
+                  "replace": "projects/mobile/src/main.ts",
+                  "with": "projects/mobile/src/main.hmr.ts"
+                },
                 {
                   "replace": "projects/mobile/src/environments/environment.ts",
                   "with": "projects/mobile/src/environments/environment.hmr.ts"
@@ -253,6 +272,10 @@
           "configurations": {
             "production": {
               "browserTarget": "mobile:build:production"
+            },
+            "local": {
+              "browserTarget": "mobile:build:local",
+              "proxyConfig": "proxy.conf.local.json"
             },
             "hmr": {
               "hmr": true,
@@ -274,9 +297,6 @@
             "tsConfig": "projects/mobile/tsconfig.spec.json",
             "karmaConfig": "projects/mobile/karma.conf.js",
             "styles": [
-              {
-                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
-              },
               "projects/mobile/src/styles.scss"
             ],
             "scripts": [],
@@ -387,5 +407,8 @@
       }
     }
   },
-  "defaultProject": "web"
+  "defaultProject": "web",
+  "cli": {
+    "packageManager": "yarn"
+  }
 }

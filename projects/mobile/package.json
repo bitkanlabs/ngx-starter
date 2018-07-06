@@ -1,0 +1,14 @@
+{
+  "name": "@ksite-webapps/mobile",
+  "version": "0.0.0",
+  "jest": {
+    "displayName": "mobile",
+    "preset": "../../jest-preset-app.json",
+    "moduleNameMapper": {
+      "^@mob/app(.*)": "<rootDir>/src/app$1",
+      "^@mob/shared(.*)": "<rootDir>/src/app/shared$1",
+      "^@mob/assets(.*)": "<rootDir>/src/assets$1",
+      "^@mob/env": "<rootDir>/src/environments/environment"
+    }
+  }
+}

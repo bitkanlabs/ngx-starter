@@ -1,0 +1,33 @@
+{
+  "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.ts",
+  "globals": {
+    "ts-jest": {
+      "tsConfigFile": "tsconfig.jest.json"
+    },
+    "__TRANSFORM_HTML__": true
+  },
+  "transform": {
+    "^.+\\.(ts|js|html)$": "<rootDir>/../../../node_modules/jest-preset-angular/preprocessor.js"
+  },
+  "testMatch": [
+    "**/__tests__/**/*.+(ts|js)?(x)",
+    "**/+(*.)+(spec|test).+(ts|js)?(x)"
+  ],
+  "moduleFileExtensions": [
+    "ts",
+    "js",
+    "html",
+    "json"
+  ],
+  "moduleNameMapper": {
+    "^@ngks/api(.*)": "<rootDir>/../../dist/ngks/api$1",
+    "^@ngks/core(.*)": "<rootDir>/../../dist/ngks/core$1"
+  },
+  "transformIgnorePatterns": [
+    "node_modules/(?!@ngrx)"
+  ],
+  "snapshotSerializers": [
+    "<rootDir>/../../../node_modules/jest-preset-angular/AngularSnapshotSerializer.js",
+    "<rootDir>/../../../node_modules/jest-preset-angular/HTMLCommentSerializer.js"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "@ksite-webapps/web",
+  "version": "0.0.0",
+  "jest": {
+    "displayName": "web",
+    "preset": "../../jest-preset-app.json",
+    "moduleNameMapper": {
+      "^@web/app(.*)": "<rootDir>/src/app$1",
+      "^@web/shared(.*)": "<rootDir>/src/app/shared$1",
+      "^@web/assets(.*)": "<rootDir>/src/assets$1",
+      "^@web/env": "<rootDir>/src/environments/environment"
+    }
+  }
+}

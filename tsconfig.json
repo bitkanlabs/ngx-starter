@@ -4,6 +4,7 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "allowJs": true,
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
@@ -17,6 +18,30 @@
       "dom"
     ],
     "paths": {
+      "@web/env": [
+        "projects/web/src/environments/environment"
+      ],
+      "@web/app/*": [
+        "projects/web/src/app/*"
+      ],
+      "@web/shared": [
+        "projects/web/src/app/shared"
+      ],
+      "@web/shared/*": [
+        "projects/web/src/app/shared/*"
+      ],
+      "@mob/env": [
+        "projects/web/src/environments/environment"
+      ],
+      "@mob/app/*": [
+        "projects/web/src/app/*"
+      ],
+      "@mob/shared": [
+        "projects/web/src/app/shared"
+      ],
+      "@mob/shared/*": [
+        "projects/web/src/app/shared/*"
+      ],
       "@ngks/core": [
         "dist/ngks/core"
       ],

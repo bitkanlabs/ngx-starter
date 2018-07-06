@@ -1,27 +1,37 @@
-import { NgModule }                     from '@angular/core';
-import { BrowserModule }                from '@angular/platform-browser';
-import { BrowserAnimationsModule }      from '@angular/platform-browser/animations';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { FlexLayoutModule }             from '@angular/flex-layout';
-
-import { NgxsModule }                    from '@ngxs/store';
-import { NgxsRouterPluginModule }        from '@ngxs/router-plugin';
-// import { NgxsFormPluginModule }        from '@ngxs/form-plugin';
-// import { NgxsStoragePluginModule }     from '@ngxs/storage-plugin';
-// import { NgxsWebsocketPluginModule }   from '@ngxs/websocket-plugin';
-import { NgxsLoggerPluginModule }        from '@ngxs/logger-plugin';
-import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { ErrorHandler, Injectable, NgModule } from '@angular/core';
+import { BrowserModule, Title }               from '@angular/platform-browser';
+import { BrowserAnimationsModule }            from '@angular/platform-browser/animations';
+import { HttpClient, HttpClientModule }       from '@angular/common/http';
+import { FlexLayoutModule }                   from '@angular/flex-layout';
+import * as Raven                             from 'raven-js';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader }              from '@ngx-translate/http-loader';
 import { ServiceWorkerModule }              from '@angular/service-worker';
+import { environment }                      from '@web/env';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent }     from './app.component';
-import { environment }      from '@env';
+import { AppRoutingModule } from '@web/app/app-routing.module';
+import { AppStoreModule }   from '@web/app/app-store.module';
+import { CoreModule }       from '@web/app/core/core.module';
+
+import { AppComponent } from '@web/app/app.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
+Raven.config('https://dsn@sentry.io', {
+  environment: environment.name,
+}).install();
+
+@Injectable()
+export class RavenErrorHandler extends ErrorHandler {
+  handleError(err: any): void {
+    Raven.captureException(err.originalError || err);
+    if (!environment.production) {
+      super.handleError(err);
+    }
+  }
 }
 
 @NgModule({
@@ -33,20 +43,21 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserAnimationsModule,
     FlexLayoutModule,
     HttpClientModule,
-    AppRoutingModule,
 
-    NgxsModule.forRoot([]),
-    NgxsRouterPluginModule.forRoot(),
-    // NgxsFormPluginModule.forRoot(),
-    // NgxsStoragePluginModule.forRoot(),
-    // NgxsWebsocketPluginModule.forRoot(),
-    environment.production === false ? NgxsLoggerPluginModule.forRoot() : [],
-    environment.production === false ? NgxsReduxDevtoolsPluginModule.forRoot() : [],
+    CoreModule,
+    AppStoreModule,
+    AppRoutingModule,
 
     TranslateModule.forRoot({ loader: { provide: TranslateLoader, useFactory: (createTranslateLoader), deps: [HttpClient] } }),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers   : [],
+  providers   : [
+    Title,
+    {
+      provide : ErrorHandler,
+      useClass: environment.sentry ? RavenErrorHandler : ErrorHandler,
+    },
+  ],
   bootstrap   : [AppComponent],
 })
 export class AppModule {
