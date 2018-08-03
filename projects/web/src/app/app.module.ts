@@ -3,7 +3,8 @@ import { BrowserModule, Title }               from '@angular/platform-browser';
 import { BrowserAnimationsModule }            from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule }       from '@angular/common/http';
 import { FlexLayoutModule }                   from '@angular/flex-layout';
-import * as Raven                             from 'raven-js';
+
+import * as Raven from 'raven-js';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader }              from '@ngx-translate/http-loader';
@@ -14,13 +15,13 @@ import { AppRoutingModule } from '@web/app/app-routing.module';
 import { AppStoreModule }   from '@web/app/app-store.module';
 import { CoreModule }       from '@web/app/core/core.module';
 
-import { AppComponent } from '@web/app/app.component';
+import { AppComponent } from './app.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-Raven.config('https://dsn@sentry.io', {
+Raven.config('https://dsn@sentry.io/dsn', {
   environment: environment.name,
 }).install();
 
@@ -49,7 +50,8 @@ export class RavenErrorHandler extends ErrorHandler {
     AppRoutingModule,
 
     TranslateModule.forRoot({ loader: { provide: TranslateLoader, useFactory: (createTranslateLoader), deps: [HttpClient] } }),
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    GtagModule.forRoot({ trackingId: 'UA-xxxxxxxx-x', trackPageviews: true }),
   ],
   providers   : [
     Title,

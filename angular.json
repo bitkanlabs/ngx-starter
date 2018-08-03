@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/web",
+            "outputPath": "dist/web/browser",
             "index": "projects/web/src/index.html",
             "main": "projects/web/src/main.ts",
             "polyfills": "projects/web/src/polyfills.ts",
@@ -25,6 +25,7 @@
             "assets": [
               "projects/web/src/favicon.ico",
               "projects/web/src/assets",
+              "projects/web/src/serve.json",
               "projects/web/src/manifest.json"
             ],
             "styles": [
@@ -47,7 +48,7 @@
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
-              "vendorChunk": false,
+              "vendorChunk": true,
               "buildOptimizer": true,
               "serviceWorker": true,
               "budgets": [
@@ -122,6 +123,7 @@
             "assets": [
               "projects/web/src/favicon.ico",
               "projects/web/src/assets",
+              "projects/web/src/serve.json",
               "projects/web/src/manifest.json"
             ]
           }
@@ -141,7 +143,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/web-server",
+            "outputPath": "dist/web/server",
             "main": "projects/web/src/main.server.ts",
             "tsConfig": "projects/web/tsconfig.server.json"
           },
@@ -154,6 +156,14 @@
                 }
               ]
             }
+          }
+        },
+        "app-shell": {
+          "builder": "@angular-devkit/build-angular:app-shell",
+          "options": {
+            "browserTarget": "web:build:production",
+            "serverTarget": "web:server:production",
+            "route": "shell"
           }
         }
       }
@@ -199,7 +209,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mobile",
+            "outputPath": "dist/mobile/browser",
             "index": "projects/mobile/src/index.html",
             "main": "projects/mobile/src/main.ts",
             "polyfills": "projects/mobile/src/polyfills.ts",
@@ -207,6 +217,7 @@
             "assets": [
               "projects/mobile/src/favicon.ico",
               "projects/mobile/src/assets",
+              "projects/mobile/src/serve.json",
               "projects/mobile/src/manifest.json"
             ],
             "styles": [
@@ -229,7 +240,7 @@
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
-              "vendorChunk": false,
+              "vendorChunk": true,
               "buildOptimizer": true,
               "serviceWorker": true,
               "budgets": [
@@ -303,6 +314,7 @@
             "assets": [
               "projects/mobile/src/favicon.ico",
               "projects/mobile/src/assets",
+              "projects/mobile/src/serve.json",
               "projects/mobile/src/manifest.json"
             ]
           }
@@ -322,7 +334,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/mobile-server",
+            "outputPath": "dist/mobile/server",
             "main": "projects/mobile/src/main.server.ts",
             "tsConfig": "projects/mobile/tsconfig.server.json"
           },

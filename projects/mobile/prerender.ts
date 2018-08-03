@@ -13,12 +13,12 @@ import { ROUTES }              from './static.paths';
 enableProdMode();
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('../../dist/mobile-server/main');
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('../../dist/mobile/server/main');
 
-const BROWSER_FOLDER = join(process.cwd(), 'mobile');
+const BROWSER_FOLDER = join(__dirname, 'browser');
 
 // Load the index.html file containing references to your application bundle.
-const index = readFileSync(join('mobile', 'index.html'), 'utf8');
+const index = readFileSync(join('browser', 'index.html'), 'utf8');
 
 let previousRender = Promise.resolve();
 

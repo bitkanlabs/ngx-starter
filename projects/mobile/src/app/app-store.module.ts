@@ -16,7 +16,7 @@ import { environment } from '@mob/env';
   imports  : [
     MatSnackBarModule,
     NgxsModule.forRoot([]),
-    NgxsStoragePluginModule.forRoot({ key: [] }),
+    NgxsStoragePluginModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
     // NgxsFormPluginModule.forRoot(),
     // NgxsWebsocketPluginModule.forRoot(),

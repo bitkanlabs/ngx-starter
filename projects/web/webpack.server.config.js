@@ -17,8 +17,11 @@ module.exports = {
   externals: [/node_modules/],
   output: {
     // Puts the output at the root of the dist folder
-    path: path.join(__dirname, '../../', 'dist'),
-    filename: 'web-[name].js',
+    path: path.join(__dirname, '..', '..', 'dist', 'web'),
+    filename: '[name].js',
+  },
+  "node": {
+    "__dirname": false
   },
   module: {
     rules: [
